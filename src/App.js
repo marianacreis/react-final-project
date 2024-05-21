@@ -7,8 +7,19 @@ function App() {
       <Weather defaultCity="Lisbon" />
       <footer>
         This project was coded by{" "}
-        <a href="https://github.com/marianacreis">Mariana Reis</a> and is{" "}
-        <a href="https://github.com/marianacreis/react-final-project">
+        <a
+          href="https://github.com/marianacreis"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Mariana Reis
+        </a>{" "}
+        and is{" "}
+        <a
+          href="https://github.com/marianacreis/react-final-project"
+          target="_blank"
+          rel="noreferrer"
+        >
           open-sourced on GitHub
         </a>{" "}
       </footer>
