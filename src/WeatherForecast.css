@@ -1,0 +1,26 @@
+.WeatherForecast {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.WeatherForecast canvas {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.WeatherForecast .Day {
+  color: rgba(39, 33, 66, 0.4);
+}
+
+.Max-Temperature {
+  color: rgb(76, 156, 157);
+}
+
+.Min-Temperature {
+  margin-left: 7px;
+  opacity: 0.6;
+}

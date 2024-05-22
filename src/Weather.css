@@ -57,9 +57,32 @@
 .Icon-temperature-info h2 {
   font-size: 88px;
   margin: 0;
+  line-height: 88px;
+  display: inline;
 }
 
 .Icon-temperature-info span {
-  font-size: 24px;
-  margin-top: 15px;
+  font-size: 22px;
+  position: relative;
+  top: -45px;
+}
+
+.Icon-temperature-info span a {
+  text-decoration: none;
+  color: #4c9c9d;
+  font-weight: 600;
+}
+
+.Icon-temperature-info span a:hover {
+  opacity: 0.8;
+}
+
+.Icon-temperature-info canvas {
+  width: 88px;
+  height: 88px;
+  margin-right: 10px;
+}
+
+.Current-weather-info {
+  text-transform: capitalize;
 }
