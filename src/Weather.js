@@ -10,8 +10,6 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response);
-
     setWeatherData({
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
@@ -20,6 +18,7 @@ export default function Weather(props) {
       city: response.data.name,
       description: response.data.weather[0].description,
       iconUrl: response.data.weather[0].icon,
+      coordinates: response.data.coord,
     });
 
     setReady(true);
@@ -52,7 +51,7 @@ export default function Weather(props) {
           <input type="submit" value="Search" className="submit-input"></input>
         </form>
         <WeatherInfo data={weatherData} />
-        <WeatherForecast />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
