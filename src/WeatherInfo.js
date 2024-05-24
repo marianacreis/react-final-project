@@ -5,7 +5,7 @@ import WeatherIcons from "./WeatherIcons";
 export default function WeatherInfo(props) {
   return (
     <div className="Current-weather-info">
-      <div>
+      <div className="weather-info-list">
         <h3>{props.data.city}</h3>
         <ul>
           <li>
@@ -19,7 +19,10 @@ export default function WeatherInfo(props) {
       </div>
       <div className="Icon-temperature-info">
         <WeatherIcons code={props.data.iconUrl} />
-        <h2>{Math.round(props.data.temperature)}º</h2>
+        <h2>
+          {Math.round(props.data.temperature)}
+          <span>ºC</span>
+        </h2>
       </div>
     </div>
   );

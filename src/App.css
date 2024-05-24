@@ -21,3 +21,18 @@ footer a {
   text-decoration: none;
   font-weight: 450;
 }
+
+@media (max-width: 900px) {
+  .App {
+    max-width: 100%;
+    padding: 0;
+    border-radius: 0;
+    margin: 50px auto;
+    box-shadow: none;
+  }
+
+  footer {
+    font-size: 10px;
+    padding-bottom: 20px;
+  }
+}

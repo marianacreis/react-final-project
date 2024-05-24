@@ -15,6 +15,7 @@
   border: none;
   border-radius: 5px;
   background-color: rgb(247, 253, 254);
+  color: rgba(39, 33, 66, 0.4);
 }
 
 .Weather form .submit-input {
@@ -85,4 +86,50 @@
 
 .Current-weather-info {
   text-transform: capitalize;
+}
+
+@media (max-width: 900px) {
+  .Weather form .search-input {
+    padding: 10px;
+    border: none;
+    width: 50%;
+  }
+
+  .Weather form .submit-input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .weather-info-list {
+    margin-left: 30px;
+  }
+
+  .weather-info-list h3 {
+    font-size: 25px;
+  }
+
+  .weather-info-list li {
+    font-size: 14px;
+  }
+
+  .Icon-temperature-info {
+    margin-right: 30px;
+  }
+
+  .Icon-temperature-info canvas {
+    display: none;
+  }
+
+  .Icon-temperature-info h2 {
+    font-size: 60px;
+  }
+
+  .Current-weather-info {
+    justify-content: center;
+    gap: 60px;
+  }
+
+  .Icon-temperature-info span {
+    top: -25px;
+  }
 }
