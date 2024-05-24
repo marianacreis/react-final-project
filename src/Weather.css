@@ -28,7 +28,11 @@
   color: white;
 }
 
-.Weather h3 {
+.current-weather-info {
+  text-transform: capitalize;
+}
+
+.Weather .city-name {
   font-size: 38px;
   margin: 0;
 }
@@ -45,47 +49,33 @@
   margin-bottom: 5px;
 }
 
-.Current-weather-info {
+.current-weather-info {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
 }
 
-.Icon-temperature-info {
+.icon-temperature-info {
   display: flex;
 }
 
-.Icon-temperature-info h2 {
+.icon-temperature-info .current-temperature {
   font-size: 88px;
   margin: 0;
   line-height: 88px;
   display: inline;
 }
 
-.Icon-temperature-info span {
+.icon-temperature-info .unit {
   font-size: 22px;
   position: relative;
   top: -45px;
 }
 
-.Icon-temperature-info span a {
-  text-decoration: none;
-  color: #4c9c9d;
-  font-weight: 600;
-}
-
-.Icon-temperature-info span a:hover {
-  opacity: 0.8;
-}
-
-.Icon-temperature-info canvas {
+.icon-temperature-info canvas {
   width: 88px;
   height: 88px;
   margin-right: 10px;
-}
-
-.Current-weather-info {
-  text-transform: capitalize;
 }
 
 @media (max-width: 900px) {
@@ -100,11 +90,16 @@
     font-size: 14px;
   }
 
+  .current-weather-info {
+    justify-content: center;
+    gap: 60px;
+  }
+
   .weather-info-list {
     margin-left: 30px;
   }
 
-  .weather-info-list h3 {
+  .weather-info-list .city-name {
     font-size: 25px;
   }
 
@@ -112,24 +107,19 @@
     font-size: 14px;
   }
 
-  .Icon-temperature-info {
+  .icon-temperature-info {
     margin-right: 30px;
   }
 
-  .Icon-temperature-info canvas {
+  .icon-temperature-info canvas {
     display: none;
   }
 
-  .Icon-temperature-info h2 {
+  .icon-temperature-info .city-name {
     font-size: 60px;
   }
 
-  .Current-weather-info {
-    justify-content: center;
-    gap: 60px;
-  }
-
-  .Icon-temperature-info span {
-    top: -25px;
+  .icon-temperature-info .unit {
+    top: -45px;
   }
 }

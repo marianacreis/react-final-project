@@ -4,9 +4,9 @@ import WeatherIcons from "./WeatherIcons";
 
 export default function WeatherInfo(props) {
   return (
-    <div className="Current-weather-info">
+    <div className="current-weather-info">
       <div className="weather-info-list">
-        <h3>{props.data.city}</h3>
+        <h3 className="city-name">{props.data.city}</h3>
         <ul>
           <li>
             <FormattedDate date={props.data.date} />
@@ -17,11 +17,11 @@ export default function WeatherInfo(props) {
           </li>
         </ul>
       </div>
-      <div className="Icon-temperature-info">
+      <div className="icon-temperature-info">
         <WeatherIcons code={props.data.iconUrl} />
-        <h2>
+        <h2 className="current-temperature">
           {Math.round(props.data.temperature)}
-          <span>ºC</span>
+          <span className="unit">ºC</span>
         </h2>
       </div>
     </div>
