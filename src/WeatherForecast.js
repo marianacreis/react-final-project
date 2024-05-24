@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./WeatherForecast.css";
-import WeatherIcons from "./WeatherIcons";
 import WeatherForecastDay from "./WeatherForecastDay";
 import axios from "axios";
-import Weather from "./Weather";
 
 export default function WeatherForecast(props) {
   let [loaded, setLoaded] = useState(false);
@@ -11,9 +9,20 @@ export default function WeatherForecast(props) {
 
   function handleResponse(response) {
     setForecast(response.data.daily);
-
     setLoaded(true);
   }
+
+  function load() {
+    let apiKey = "597c40c39084687093b091cd48b366f8";
+    let longitude = props.coordinates.lon;
+    let latitude = props.coordinates.lat;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coordinates]);
 
   if (loaded) {
     return (
@@ -25,16 +34,14 @@ export default function WeatherForecast(props) {
                 <WeatherForecastDay data={dailyForecast} />
               </div>
             );
+          } else {
+            return null;
           }
         })}
       </div>
     );
   } else {
-    let apiKey = "597c40c39084687093b091cd48b366f8";
-    let longitude = props.coordinates.lon;
-    let latitude = props.coordinates.lat;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    load();
 
     return null;
   }
